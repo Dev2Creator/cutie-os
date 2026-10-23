@@ -3930,14 +3930,10 @@ def tool_ed(app, args):
 
 
 LANG_GATES = {
-    "python": "untitled.py", "py": "untitled.py", "p": "untitled.py",
     "c": "untitled.c", "cpp": "untitled.cpp", "c++": "untitled.cpp",
     "html": "untitled.html", "css": "untitled.css",
-    "sh": "untitled.sh", "bash": "untitled.sh", "shell": "untitled.sh",
-    "js": "untitled.js", "node": "untitled.js", "j": "untitled.js",
     "json": "untitled.json", "md": "untitled.md",
-    "rust": "untitled.rs", "r": "untitled.rs", "go": "untitled.go", "g": "untitled.go",
-    "java": "untitled.java", "txt": "untitled.txt", "t": "untitled.txt",
+    "txt": "untitled.txt",
 }
 
 
@@ -8017,16 +8013,7 @@ class App:
         if not parts:
             return
         cmd, args = parts[0], parts[1:]
-        gate = LANG_GATES.get(cmd.lower())
-        if gate:
-            if cmd.lower() == "c" and args:
-                return self.route("ed " + " ".join(args))
-            fname = _gate_counter(gate)
-            self.open_epage(_untitled_path(fname))
-            return
-        if cmd in T.macros and cmd not in TOOL_MAP and cmd not in ("cd", "sudo"):
-            T.push([("◇ macro %s » %s" % (cmd, T.macros[cmd]), C_SLATE)])
-            return self.route(T.macros[cmd], depth + 1)
+        # 1. Registered built-in tools have first priority
         tool = TOOL_MAP.get(cmd)
         if tool:
             self.tool_tick(tool)
@@ -8035,12 +8022,26 @@ class App:
             except Exception as e:
                 T.push([("✗ %s failed: %s" % (cmd, e), C_RED)])
             return
+        # 2. cd command
         if cmd == "cd":
             self.do_cd(args)
             return
+        # 3. User macros
+        if cmd in T.macros and cmd not in TOOL_MAP and cmd not in ("cd", "sudo"):
+            T.push([("◇ macro %s » %s" % (cmd, T.macros[cmd]), C_SLATE)])
+            return self.route(T.macros[cmd], depth + 1)
+        # 4. Interactive TTY programs (shells, REPLs, editors)
         if cmd in TTY_PROGRAMS:
             self.run_pty([self.shell, "-c", line])
             return
+        # 5. Language file gates (only for non-executable file shortcuts)
+        gate = LANG_GATES.get(cmd.lower())
+        if gate and not shutil.which(cmd):
+            if cmd.lower() == "c" and args:
+                return self.route("ed " + " ".join(args))
+            fname = _gate_counter(gate)
+            return self.route("ed " + _untitled_path(fname))
+        # 6. Background capture execution
         self.start_capture(line)
 
     def do_cd(self, args):
