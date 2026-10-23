@@ -21,10 +21,13 @@
 ```
 
 [![Version](https://img.shields.io/badge/version-v4.0.0--Universal-ffb6c1?style=for-the-badge&logo=heart&logoColor=white)](https://github.com/Dev2Creator/cutie-os)
+[![PyPI](https://img.shields.io/badge/pypi-cutie--os-3775a9?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/cutie-os/)
 [![License: EULA](https://img.shields.io/badge/license-Custom%20EULA%20%2B%20AS--IS-c4b5fd?style=for-the-badge)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-bae6fd?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Dependencies: Zero](https://img.shields.io/badge/dependencies-0%20Pure%20Stdlib-a7f3d0?style=for-the-badge)](https://python.org)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows%20%7C%20Termux-fed7aa?style=for-the-badge)](https://github.com/Dev2Creator/cutie-os)
+[![Framerate: 60 FPS](https://img.shields.io/badge/fps-60%20Double--Buffered-fed7aa?style=for-the-badge&logo=speedtest&logoColor=white)](https://github.com/Dev2Creator/cutie-os)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows%20%7C%20Termux-fbcfe8?style=for-the-badge)](https://github.com/Dev2Creator/cutie-os)
+[![Privacy: Offline](https://img.shields.io/badge/privacy-100%25%20Offline%20Local-86efac?style=for-the-badge&logo=lock&logoColor=white)](https://github.com/Dev2Creator/cutie-os)
 [![Made with Love](https://img.shields.io/badge/crafted%20with-💖%20by%20Anika-f472b6?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cutiepieanika@gmail.com)
 
 <p align="center">
@@ -33,7 +36,7 @@
   <b>Windows 10/11</b>, <b>Apple macOS</b>, <b>Linux (all distros)</b>, and <b>Android Termux</b>! (੭ˊᵕˋ)੭✧
 </p>
 
-[✨ Quick Install](#-how-to-bring-cutie-os-home-universal-install) • [📸 Screenshots](#-real-screenshots-gallery) • [🌸 What is CUTIE OS?](#-what-is-cutie-os-and-why-is-it-helpful) • [🚀 5-Minute Tour](#-first-5-minutes-in-cutie-os-beginner-tutorial) • [🐱 Meet Momo](#-meet-momo-your-terminal-companion-cat) • [🐣 OS Easter Eggs](#-the-secret-os-easter-egg-engine) • [🎮 Retro Arcade](#-the-cozy-retro-arcade-60-fps) • [🌷 Self-Care](#-self-care-sanctuary--gentle-wellness) • [📖 103 Tools Manual](#-the-complete-encyclopedia-of-103-tools) • [🏆 36 Achievements](#-rpg-leveling--36-achievements-guide) • [❓ FAQ](#-frequently-asked-questions-faq)
+[✨ Quick Install](#-how-to-bring-cutie-os-home-universal-install) • [📋 20-Cmd Cheatsheet](#-the-ultimate-20-command-daily-cheatsheet) • [💻 Code Studio](#-the-in-hud-language-studio--mini-ide) • [📸 Screenshots](#-real-screenshots-gallery) • [🌸 What is CUTIE OS?](#-what-is-cutie-os-and-why-is-it-helpful) • [🚀 5-Minute Tour](#-first-5-minutes-in-cutie-os-beginner-tutorial) • [🐱 Meet Momo](#-meet-momo-your-terminal-companion-cat) • [🐣 OS Easter Eggs](#-the-secret-os-easter-egg-engine) • [🎮 Retro Arcade](#-the-cozy-retro-arcade-60-fps) • [🌷 Self-Care](#-self-care-sanctuary--gentle-wellness) • [📖 103 Tools Manual](#-the-complete-encyclopedia-of-103-tools) • [🏆 36 Achievements](#-rpg-leveling--36-achievements-guide) • [❓ FAQ](#-frequently-asked-questions-faq)
 
 </div>
 
@@ -52,17 +55,23 @@
   - [✨ At a Glance: Key Pillars](#-at-a-glance-key-pillars)
   - [⚖️ Traditional Terminals vs. CUTIE OS](#️-traditional-terminals-vs-cutie-os)
   - [🌟 Why CUTIE OS is Helpful for Everyday Life](#-why-cutie-os-is-helpful-for-everyday-life)
+  - [🏛️ System Architecture & Engine Internals](#-system-architecture--engine-internals)
 - [🎀 How to Bring CUTIE OS Home (Universal Install)](#-how-to-bring-cutie-os-home-universal-install)
   - [🐧 Linux & 🍎 Apple macOS One-Liner](#-linux--apple-macos-one-line-terminal-install)
   - [🪟 Windows 10 & 11 PowerShell One-Liner](#-windows-10--11-powershell-one-line-install)
   - [🤖 Android Termux Setup](#-android-termux)
   - [⚡ Portable Zero-Install Clone & Run](#-portable-zero-install-run-clone--play)
 - [🚀 First 5 Minutes in CUTIE OS (Beginner Tutorial)](#-first-5-minutes-in-cutie-os-beginner-tutorial)
+- [📋 The Ultimate 20-Command Daily Cheatsheet](#-the-ultimate-20-command-daily-cheatsheet)
 - [📸 Real Screenshots Gallery](#-real-screenshots-gallery)
 - [🐱 Meet Momo! Your Terminal Companion Cat](#-meet-momo-your-terminal-companion-cat)
   - [🐾 How to Care for Momo](#-how-to-care-for-momo)
   - [📈 Evolution Stages & Affection Levels](#-evolution-stages--affection-levels)
 - [🐣 The Secret OS Easter Egg Engine](#-the-secret-os-easter-egg-engine)
+- [💻 The In-HUD Language Studio & Mini-IDE](#-the-in-hud-language-studio--mini-ide)
+  - [✨ Interactive 3D Glowing ASCII Studio](#-interactive-3d-glowing-ascii-studio)
+  - [⚡ Supported Languages & Instant Gates](#-supported-languages--instant-gates)
+  - [⌨️ In-Studio Keyboard Shortcuts & Hotkeys](#️-in-studio-keyboard-shortcuts--hotkeys)
 - [🎮 The Cozy Retro Arcade (60 FPS)](#-the-cozy-retro-arcade-60-fps)
 - [🌷 Self-Care Sanctuary & Gentle Wellness](#-self-care-sanctuary--gentle-wellness)
 - [📖 The Complete Encyclopedia of 103 Tools](#-the-complete-encyclopedia-of-103-tools)
@@ -141,6 +150,42 @@ Traditional terminals were designed decades ago: pitch-black screens, harsh mono
 3. **For Mental Health & Focus**: Features gentle self-care tools like the 4-4-6 calming breathing flower (`breathe`), a daily habit garden (`selfcare`), Pomodoro focus timers (`focus 25`), and a proud-moments vault (`love`) that reminds you of your wins when imposter syndrome strikes.
 4. **For Ricing & Aesthetic Desktops**: Works as a drop-in desktop HUD or sidecar monitor cockpit (`dash`). Dynamically generates color palettes from your wallpaper (`wp image.png`) or matches your Linux distro / macOS / Windows host OS automatically!
 5. **Universal Portability**: Zero dependencies means you can curl or git clone it onto any server, Raspberry Pi, Chromebook, WSL2, or Android phone, and it boots up in under 0.1 seconds without installing hundreds of megabytes of `node_modules` or Python pip packages.
+
+---
+
+### 🏛️ System Architecture & Engine Internals
+
+CUTIE OS achieves silky-smooth **60 frames per second** with **zero third-party dependencies** by leveraging standard library Python, non-blocking I/O multiplexing, and custom double-buffered VT100 escape stream assembly:
+
+```mermaid
+flowchart TD
+    User([Terminal / Keyboard Input]) --> KeyReader["Raw KeyReader (VT100 Byte Parser)"]
+    KeyReader --> Router{"Central Command Router (route)"}
+    
+    Router -->|Bare py, c, sh, node| Studio["💻 In-HUD Language Studio (epage)"]
+    Router -->|13 Fullscreen Commands| FullPages["🖥️ Fullscreen Interactive Pages (dash, help, typing, breathe...)"]
+    Router -->|60 FPS Games| Arcade["🕹️ Retro Arcade Engine (snake, tetris, 2048, ttt)"]
+    Router -->|103 Registered Tools| ToolMap["⚙️ ToolMap Dispatcher (sysinfo, weather, gshop...)"]
+    Router -->|Interactive Shell PTY| PTY["⚡ PTY Multiplexer (sudo, vim, htop, bash)"]
+    
+    Studio --> DoubleBuffer["🎨 Double-Buffered Canvas Engine (24-bit TrueColor)"]
+    FullPages --> DoubleBuffer
+    Arcade --> DoubleBuffer
+    ToolMap --> DoubleBuffer
+    
+    Sensors["📊 Hardware Telemetry (CPU, GPU, RAM, Thermals, Battery)"] --> DoubleBuffer
+    MomoState["🐾 Momo Companion AI (Affection, Mood, XP, Speech)"] --> DoubleBuffer
+    
+    DoubleBuffer --> AnsiStream["🚀 Fast Synchronized ANSI Stream (SYNC_ON + DIFF + SYNC_OFF)"]
+    AnsiStream --> TerminalStdout([Terminal Stdout / Kitty / Alacritty / Windows Terminal])
+    
+    ToolMap <--> LocalStorage[("🔒 Local Offline Storage (~/.config/cutie/*.json)")]
+```
+
+#### ⚡ Technical Highlights:
+- **Zero-Flicker Synchronized Rendering**: Emits atomic synchronized update sequences (`\x1b[?2026h ... \x1b[?2026l`), guaranteeing zero tearing even during 60 FPS games and particle fireworks!
+- **Pure Python POSIX/Windows PTY Multiplexing**: Forks real pseudo-terminal child processes (`pty.fork()`) with full window-resize propagation (`SIGWINCH`), preserving complete color output and raw mouse/keyboard events for `vim`, `htop`, and `python`.
+- **Sensory-Friendly Color Science**: Palettes are mathematically tuned with lightness-contrast clamping so that text remains sharp, high-contrast, and readable against any terminal background without causing eye strain.
 
 ---
 
@@ -232,6 +277,35 @@ Welcome to your cozy new terminal! Here is a sweet 5-minute walkthrough to help 
  │  Type:  love add shipped my first code today  (Save a win in your vault!)   │
  ╰─────────────────────────────────────────────────────────────────────────────╯
 ```
+
+---
+
+## 📋 The Ultimate 20-Command Daily Cheatsheet
+
+Keep this quick reference bookmarked! These are the 20 most popular commands used by the CUTIE OS community every day:
+
+| Command | Category | What it Does & Why You'll Love It | Quick Example |
+| :--- | :---: | :--- | :--- |
+| `py` / `python` | 💻 Studio | Opens the in-HUD Python 3 Studio with 3D banner, syntax check & F1 run | `py` (or `py script.py`) |
+| `c` | 💻 Studio | Opens the in-HUD C Studio with `#include <stdio.h>` template & gcc compile | `c` |
+| `sh` | 💻 Studio | Opens the in-HUD Bash Shell Script Studio with instant F1 execution | `sh` |
+| `dash` | ⏱️ HUD | Fullscreen cockpit dashboard with giant retro digital clock & dials | `dash` |
+| `pet cuddle` | 🐾 Momo | Hug Momo the Cat, listen to his soft purrs (`prrrrr ♡`), and earn +10 XP | `pet cuddle` |
+| `pet feed` | 🐾 Momo | Feed Momo a tasty fish treat (`🐟 nom nom!`) to boost his hunger meter | `pet feed` |
+| `sparkle` | ✨ Fun | Showers your terminal in animated confetti with an encouraging cheer | `sparkle` |
+| `neko` | 🐾 Fun | Cute ASCII kitten expressions, feline trivia, and +10 happiness | `neko` |
+| `breathe` | 🌷 Care | 4-4-6 guided breathing lotus flower to melt away debugging anxiety | `breathe` |
+| `selfcare` | 🌷 Care | Daily habit tracker that waters your growing ASCII tulip garden | `selfcare water` |
+| `love add` | 💖 Care | Saves proud moments in your private vault for tough days | `love add fixed the bug!` |
+| `snake` | 🕹️ Arcade | Silky-smooth 60 FPS Snake with heart multiplier combos | `snake` |
+| `ttt 6` | 🕹️ Arcade | Challenge Momo's mathematically unbeatable Minimax AI! | `ttt 6` |
+| `typing` | 🕹️ Arcade | 12-mode typing test featuring code sprints, ghost replays & Boss fights | `typing code` |
+| `theme` | 🎨 Style | Switch between pastel flavors: `sakura`, `arch`, `cupertino`, `dracula` | `theme sakura` |
+| `sysinfo` | 📊 Vitals | Deep Fastfetch hardware audit (motherboard, CPU, GPU, RAM, BIOS) | `sysinfo` |
+| `weather` | 🌐 Web | Live ASCII weather forecast for your location with 3-day preview | `weather tokyo` |
+| `speed` | 🌐 Network | Zero-dependency download speed test with real-time Mbps gauge | `speed` |
+| `gshop` | 🛍️ Life | Privacy-respecting shopping & price comparison assistant | `gshop mechanical switches` |
+| `code` | 💻 IDE | Lightweight dual-pane file browser and terminal code viewer | `code .` |
 
 ---
 
@@ -362,6 +436,96 @@ When CUTIE OS launches, its internal detection engine inspects your operating en
 | **🤖 Android Termux** | `termux` | `#00ff41` | `#0d7328` | `#5af78e` | `🤖 Termux Mobile Edition` — Pocket cyber deck phosphor green for mobile cuties |
 
 > 🌸 *Prefer another flavor?* You can switch themes anytime by typing `theme <name>` (e.g. `theme sakura`, `theme sunset`, `theme dracula`, `theme catppuccin`, `theme matrix`)!
+
+---
+
+## 💻 The In-HUD Language Studio & Mini-IDE
+
+Forget heavy, sluggish external text editors. CUTIE OS features an **in-HUD, zero-dependency, distraction-free Code Studio and Mini-IDE** engineered directly into the 60 FPS terminal canvas!
+
+Whether you need to quickly whip up an automation script in Python, test an algorithm in C, or craft a shell script, typing any supported language alias (`py`, `c`, `sh`, `node`, `rust`, `go`, `html`, `css`) instantly opens a designed, glowing code sanctuary.
+
+### ✨ Interactive 3D Glowing ASCII Studio
+
+```text
+╭── ✿ edit 🐍 main.py ● ──────────────────────────────────────────────────────────── Ln 4, Col 25 ─╮
+│                                                                                                   │
+│    ██████╗ ██╗   ██╗████████╗██╗  ██╗ ██████╗ ███╗   ██╗                                          │
+│    ██╔══██╗╚██╗ ██╔╝╚══██╔══╝██║  ██║██╔═══██╗████╗  ██║                                          │
+│    ██████╔╝ ╚████╔╝    ██║   ███████║██║   ██║██╔██╗ ██║                                          │
+│    ██╔═══╝   ╚██╔╝     ██║   ██╔══██║██║   ██║██║╚██╗██║                                          │
+│    ██║        ██║      ██║   ██║  ██║╚██████╔╝██║ ╚████║                                          │
+│    ╚═╝        ╚═╝      ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝                                          │
+│  ······························································│ ◆ LIVE PREVIEW                   │
+│   1 #!/usr/bin/env python3                                    │ ✓ syntax OK                       │
+│   2 # ✿ made with CUTIE editor                                │                                   │
+│   3                                                           │ ◆ OUTLINE                         │
+│ ❯ 4 def main():                                               │ ❯ fn    main                    4 │
+│   5     print("hello from cutie ♡")                           │   fn    calculate_xp           12 │
+│   6                                                           │                                   │
+│   7 if __name__ == "__main__":                                │ ◆ STATS                           │
+│   8     main()                                                │ 8 lines • 164 ch                  │
+│                                                               │ CTRL+O jump • CTRL+E hide         │
+│───────────────────────────────────────────────────────────────┴───────────────────────────────────│
+│ ◆ OUTPUT live ────────────────────────────────────────────────────────────────────────────────────│
+│   hello from cutie ♡                                                                              │
+│   [Process exited with status 0 in 0.04s]                                                         │
+│                                                                                                   │
+│ 🐍 python  ●  8 ch                      ✿ happy coding, cutie                                     │
+│ ~/Documents/CUTIE_OS/main.py                                                                      │
+│    F1 run • CTRL+S save • CTRL+Z undo • CTRL+Y redo • CTRL+D dup • CTRL+F find • CTRL+Q exit      │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+#### 🌟 Key Studio Capabilities:
+- **Glowing 3D Animated Banners**: As you code, a sweeping light beam illuminates the isometric 3D language title (`PYTHON`, `C`, `SHELL`, `NODE`) with TrueColor ANSI gradient shifts!
+- **Dual-Pane Real-Time Sidebar**:
+  - **Live Syntax Diagnostics**: Instant compilation check (`✓ syntax OK`, `✓ braces balanced • main() ✓`, or red line-specific error notices `✗ line 14: invalid syntax`).
+  - **Interactive Code Outline**: Parses all functions (`def`, `fn`) and `class` declarations in real time. Press `Ctrl+O` to jump straight to any symbol!
+  - **Live Statistics**: Real-time line count, character count, and indentation depth markers (`┊`).
+- **One-Key Runner (`F1`)**: Run your script or compile your C code with a single press of `F1`. Output tails smoothly into the bottom inspection pane without losing your cursor!
+- **Momo Coding Presence**: Momo keeps you company in the footer with warm words of encouragement (`"♡ momo believes in you"`, `"✦ stay hydrated • sit straight"`). If you step away from the keyboard for 45 seconds to think, Momo curls up for a nap (`=︿= momo so rahi hai…`).
+
+---
+
+### ⚡ Supported Languages & Instant Gates
+
+Type any of the following command gates from the CUTIE OS prompt to launch the studio:
+
+| Command | Language | 3D Banner | Starter Template (`Ctrl+T`) | Real-Time Diagnostics | Runner Engine (`F1`) |
+| :---: | :---: | :---: | :--- | :--- | :--- |
+| `py` / `python` | **Python 3** | `PYTHON` | Boilerplate `main()` + shebang | AST syntax compile check (`✓ syntax OK`) | Executes with host `python3` |
+| `c` | **C** | `C` | `#include <stdio.h>` + `main()` | Brace balance + `main()` detector | Compiles via `gcc`/`clang` and runs binary |
+| `sh` / `bash` | **Bash / Shell** | `SHELL` | `#!/usr/bin/env bash` + echo | Shebang validation + function tree | Runs in subshell with live output |
+| `node` / `js` | **JavaScript** | `NODE` | `console.log("hello from cutie ♡");` | Syntax validation + error reporting | Executes with `node` or `bun` |
+| `rust` | **Rust** | `RUST` | `fn main() { println!("... "); }` | Match delimiter and keyword checks | Compiles via `rustc` |
+| `go` | **Go** | `GO` | `package main ... func main() { ... }` | Package & import validator | Runs via `go run` |
+| `html` | **HTML5** | `HTML` | Complete HTML5 doctype structure | Tag stack nesting + void tag filter | In-terminal code view |
+| `css` | **CSS3** | `CSS` | Modern CSS reset & variables | Selector rule extractor (`✓ N rules`) | In-terminal code view |
+
+> [!TIP]
+> **File Arguments Supported**: You can open any existing file directly by passing its path (e.g. `py test.py`, `c kernel.c`, `sh deploy.sh`), or simply type bare `py` to open a scratch buffer with starter code!
+
+---
+
+### ⌨️ In-Studio Keyboard Shortcuts & Hotkeys
+
+| Shortcut | Action | Description |
+| :--- | :---: | :--- |
+| `F1` | **Compile & Run** | Compiles (if C/Rust) and runs your code, streaming output into the tail console |
+| `Ctrl+S` | **Save File** | Writes changes to disk atomically and clears dirty marker (`●` → `○`) |
+| `Ctrl+Q` | **Exit Studio** | Closes the studio and smoothly returns to the main CUTIE OS HUD |
+| `Ctrl+T` | **Insert Template** | Drops a clean, idiomatic boilerplate starter template for the active language |
+| `Ctrl+O` | **Jump Outline** | Cycles cursor through functions and classes in the real-time outline tree |
+| `Ctrl+E` | **Toggle Sidebar** | Collapses or expands the right-hand Outline & Live Preview panel |
+| `Ctrl+F` | **Find Substring** | Opens the interactive `/ find:` search prompt with live match highlights |
+| `Ctrl+G` | **Go to Line** | Opens the `/ goto:` prompt to instantly jump to any line number |
+| `Ctrl+D` | **Duplicate Line** | Clones the current line beneath your cursor |
+| `Ctrl+K` | **Delete Line** | Cuts the entire current line |
+| `Ctrl+Z` | **Undo** | Reverts your previous edit (full multi-level history) |
+| `Ctrl+Y` | **Redo** | Restores the previously undone edit |
+| `Home` / `End` | **Line Navigation** | Jumps cursor directly to the start or end of the current line |
+| `PgUp` / `PgDn` | **Page Scroll** | Scrolls code view up or down by a full viewport page |
 
 ---
 
@@ -779,9 +943,12 @@ Here is the **complete reference manual for every single tool, command, and util
 - **Examples**: `edit` • `edit script.py`
 
 #### 46. `python` (Aliases: `py`, `python3`)
-- **What it does**: Launches the interactive Python 3 REPL in real PTY mode with multiline support, tab-completion, and history. Quick flags like `-c` and `-V` run inline without clearing your screen.
-- **Syntax**: `python [args ...]`
-- **Examples**: `python` • `py -c "import math; print(math.pi)"` • `python3 --version`
+- **What it does**: 
+  - **Bare `py` / `python`**: Opens the designed **In-HUD Python 3 Studio** with a sweeping 3D ASCII banner, live AST syntax checker (`✓ syntax OK`), symbol outline (`def`/`class`), and `F1` execution!
+  - **With script/arguments**: Executes the script or inline snippet (`py script.py` or `py -c "..."`) with intelligent colorized tracebacks and fast output capture.
+  - **Raw REPL**: Run `repl py` to drop into the host Python interactive prompt in native PTY mode.
+- **Syntax**: `python [args ...]` or `py [filename.py]`
+- **Examples**: `py` (opens In-HUD Studio) • `py -c "import math; print(math.pi)"` • `py script.py` • `repl py`
 
 #### 47. `repl` (Aliases: `interactive`)
 - **What it does**: Instant language REPL launcher for multiple runtimes with environment detection.
