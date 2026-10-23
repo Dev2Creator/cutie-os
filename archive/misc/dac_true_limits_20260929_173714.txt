@@ -1,0 +1,304 @@
+============================================================
+        ALC256 / LEGACY HDA TRUE PCM LIMIT TEST
+============================================================
+
+Device: hw:0,0
+PipeWire/WirePlumber:
+  NONE RUNNING
+
+============================================================
+1. RAW ALSA HARDWARE CAPABILITIES
+============================================================
+Playing raw data '/dev/zero' : Unsigned 8 bit, Rate 8000 Hz, Mono
+HW Params of device "hw:0,0":
+--------------------
+ACCESS: MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT: S16_LE S32_LE
+SUBFORMAT: STD MSBITS_MAX
+SAMPLE_BITS: [16 32]
+FRAME_BITS: [32 64]
+CHANNELS: 2
+RATE: [44100 192000]
+PERIOD_TIME: (83 11888617)
+PERIOD_SIZE: [16 524288]
+PERIOD_BYTES: [128 2097152]
+PERIODS: [2 32]
+BUFFER_TIME: (166 23777234)
+BUFFER_SIZE: [32 1048576]
+BUFFER_BYTES: [128 4194304]
+TICK_TIME: ALL
+--------------------
+aplay: set_params:1393: Sample format non available
+Available formats:
+- S16_LE
+- S32_LE
+
+============================================================
+2. CODEC / CARD INFORMATION
+============================================================
+PCH
+Codec: Realtek ALC256
+Vendor Id: 0x10ec0256
+Subsystem Id: 0x104318b3
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x02 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x03 [Audio Output] wcaps 0x41d: Stereo Amp-Out
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+Node 0x06 [Audio Output] wcaps 0x611: Stereo Digital
+    rates [0x5e0]: 44100 48000 88200 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+    rates [0x560]: 44100 48000 96000 192000
+    bits [0xe]: 16 20 24
+    formats [0x1]: PCM
+
+============================================================
+3. PCM INFO
+============================================================
+card: 0
+device: 0
+subdevice: 0
+stream: PLAYBACK
+id: ALC256 Analog
+name: ALC256 Analog
+subname: subdevice #0
+class: 0
+subclass: 0
+subdevices_count: 1
+subdevices_avail: 1
+
+============================================================
+4. SAMPLE-RATE MATRIX
+============================================================
+Testing DIRECT hw:0,0 — no plug, no PipeWire.
+
+RATE       FORMAT     RESULT     ACTUAL_RATE        STATE       
+---------- ---------- ---------- ------------------ ------------
+44100      S16_LE     OPEN/RUN   44100              RUNNING     
+44100      S24_LE     FAIL       -                  -           
+44100      S32_LE     OPEN/RUN   44100              RUNNING     
+44100      S24_3LE    FAIL       -                  -           
+48000      S16_LE     OPEN/RUN   48000              RUNNING     
+48000      S24_LE     FAIL       -                  -           
+48000      S32_LE     OPEN/RUN   48000              RUNNING     
+48000      S24_3LE    FAIL       -                  -           
+88200      S16_LE     OPEN/RUN   96000              RUNNING     
+88200      S24_LE     FAIL       -                  -           
+88200      S32_LE     OPEN/RUN   96000              RUNNING     
+88200      S24_3LE    FAIL       -                  -           
+96000      S16_LE     OPEN/RUN   96000              RUNNING     
+96000      S24_LE     FAIL       -                  -           
+96000      S32_LE     OPEN/RUN   96000              RUNNING     
+96000      S24_3LE    FAIL       -                  -           
+176400     S16_LE     OPEN/RUN   192000             RUNNING     
+176400     S24_LE     FAIL       -                  -           
+176400     S32_LE     OPEN/RUN   192000             RUNNING     
+176400     S24_3LE    FAIL       -                  -           
+192000     S16_LE     OPEN/RUN   192000             RUNNING     
+192000     S24_LE     FAIL       -                  -           
+192000     S32_LE     OPEN/RUN   192000             RUNNING     
+192000     S24_3LE    FAIL       -                  -           
+
+============================================================
+5. FORMAT TEST AT 192 kHz
+============================================================
+
+---------- S16_LE @ 192000 ----------
+[hw_params]
+access: RW_INTERLEAVED
+format: S16_LE
+subformat: STD
+channels: 2
+rate: 192000 (192000/1)
+period_size: 24000
+buffer_size: 96000
+[status]
+/proc/asound/card0/pcm0p/sub0/status:state: RUNNING
+/proc/asound/card0/pcm0p/sub0/status:owner_pid   : 16404
+/proc/asound/card0/pcm0p/sub0/hw_params:format: S16_LE
+/proc/asound/card0/pcm0p/sub0/hw_params:channels: 2
+/proc/asound/card0/pcm0p/sub0/hw_params:rate: 192000 (192000/1)
+/proc/asound/card0/pcm0p/sub0/hw_params:period_size: 24000
+/proc/asound/card0/pcm0p/sub0/hw_params:buffer_size: 96000
+[aplay output]
+Playing raw data '/dev/zero' : Signed 16 bit Little Endian, Rate 192000 Hz, Stereo
+
+---------- S24_LE @ 192000 ----------
+[hw_params]
+closed
+[status]
+[aplay output]
+Playing raw data '/dev/zero' : Signed 24 bit Little Endian, Rate 192000 Hz, Stereo
+aplay: set_params:1393: Sample format non available
+Available formats:
+- S16_LE
+- S32_LE
+
+---------- S32_LE @ 192000 ----------
+[hw_params]
+access: RW_INTERLEAVED
+format: S32_LE
+subformat: STD
+channels: 2
+rate: 192000 (192000/1)
+period_size: 24000
+buffer_size: 96000
+[status]
+/proc/asound/card0/pcm0p/sub0/status:state: RUNNING
+/proc/asound/card0/pcm0p/sub0/status:owner_pid   : 16447
+/proc/asound/card0/pcm0p/sub0/hw_params:format: S32_LE
+/proc/asound/card0/pcm0p/sub0/hw_params:channels: 2
+/proc/asound/card0/pcm0p/sub0/hw_params:rate: 192000 (192000/1)
+/proc/asound/card0/pcm0p/sub0/hw_params:period_size: 24000
+/proc/asound/card0/pcm0p/sub0/hw_params:buffer_size: 96000
+[aplay output]
+Playing raw data '/dev/zero' : Signed 32 bit Little Endian, Rate 192000 Hz, Stereo
+
+---------- S24_3LE @ 192000 ----------
+[hw_params]
+closed
+[status]
+[aplay output]
+Playing raw data '/dev/zero' : Signed 24 bit Little Endian in 3bytes, Rate 192000 Hz, Stereo
+aplay: set_params:1393: Sample format non available
+Available formats:
+- S16_LE
+- S32_LE
+
+
+============================================================
+6. CHANNEL LIMIT TEST
+============================================================
+---------- 1 channel(s) @ 192 kHz S32_LE ----------
+ACCEPTED:
+closed
+Result: FAIL
+aplay: set_params:1404: Channels count non available
+
+---------- 2 channel(s) @ 192 kHz S32_LE ----------
+ACCEPTED:
+access: RW_INTERLEAVED
+format: S32_LE
+subformat: STD
+channels: 2
+rate: 192000 (192000/1)
+period_size: 24000
+buffer_size: 96000
+Result: RUNNING
+
+---------- 3 channel(s) @ 192 kHz S32_LE ----------
+ACCEPTED:
+closed
+Result: FAIL
+aplay: set_params:1404: Channels count non available
+
+---------- 4 channel(s) @ 192 kHz S32_LE ----------
+ACCEPTED:
+closed
+Result: FAIL
+aplay: set_params:1404: Channels count non available
+
+---------- 6 channel(s) @ 192 kHz S32_LE ----------
+ACCEPTED:
+closed
+Result: FAIL
+aplay: set_params:1404: Channels count non available
+
+---------- 8 channel(s) @ 192 kHz S32_LE ----------
+ACCEPTED:
+closed
+Result: FAIL
+aplay: set_params:1404: Channels count non available
+
+
+============================================================
+7. REAL 192 kHz SINE TEST
+============================================================
+This creates an actual tone rather than /dev/zero.
+
+
+speaker-test 1.2.16
+
+Playback device is hw:0,0
+Stream parameters are 192000Hz, S32_LE, 2 channels
+Sine wave rate is 1000.0000Hz
+Rate set to 192000Hz (requested 192000Hz)
+Buffer size range from 32 to 524288
+Period size range from 16 to 262144
+Periods = 4
+was set period_size = 48000
+was set buffer_size = 192000
+ 0 - Front Left
+ 1 - Front Right
+Time per period = 4.958023
+
+============================================================
+8. FINAL LIVE 192 kHz VERIFICATION
+============================================================
+
+[LIVE hw_params]
+access: RW_INTERLEAVED
+format: S32_LE
+subformat: STD
+channels: 2
+rate: 192000 (192000/1)
+period_size: 24000
+buffer_size: 96000
+
+[LIVE status]
+state: RUNNING
+owner_pid   : 16623
+trigger_time: 810.353659718
+tstamp      : 0.000000000
+delay       : 95668
+avail       : 464
+avail_max   : 72000
+-----
+hw_ptr      : 192624
+appl_ptr    : 288160
+
+[DEVICE OWNER]
+                     USER        PID ACCESS COMMAND
+/dev/snd/pcmC0D0p:   root      16623 F...m aplay
+
+============================================================
+9. FINAL CONCLUSION DATA
+============================================================
+
+If the matrix shows:
+  44100 / 48000 / 88200 / 96000 / 176400 / 192000
+with exact actual rates,
+then the LEGACY HDA PCM exposes the complete 44.1–192 kHz range.
+
+If S32_LE works at 192000:
+  -> 32-bit CONTAINER/transport is accepted.
+  -> This does NOT prove a 32-bit analog DAC.
+
+If S24_LE also works:
+  -> 24-bit PCM is directly accepted.
+
+If S24_3LE works:
+  -> packed 24-bit PCM is directly accepted.
+
+IMPORTANT:
+This tests digital hardware/driver PCM negotiation.
+It does NOT measure analog DAC SINAD, THD+N, noise,
+dynamic range, output power, or the true number of
+physical DAC bits. Those require an external ADC/audio analyzer.
+
+============================================================
+                    TEST COMPLETE
+============================================================

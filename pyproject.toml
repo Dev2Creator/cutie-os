@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cutie-os"
+version = "4.0.0"
+description = "CUTIE OS — The coziest, cinematic terminal OS, dashboard & retro arcade for Windows, macOS, Linux, and Termux"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "LicenseRef-Proprietary-EULA"
+license-files = ["LICENSE"]
+authors = [{ name = "Anika", email = "cutiepieanika@gmail.com" }]
+keywords = ["terminal", "tui", "fastfetch", "console", "cross-platform", "windows", "macos", "linux", "arcade", "retro"]
+classifiers = [
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Monitoring",
+  "Topic :: Terminals",
+  "Topic :: Games/Entertainment",
+]
+
+[project.urls]
+Homepage = "https://github.com/Dev2Creator/cutie-os"
+Repository = "https://github.com/Dev2Creator/cutie-os.git"
+Issues = "https://github.com/Dev2Creator/cutie-os/issues"
+
+[project.scripts]
+cutie = "cutie_os:main"
+
+[tool.setuptools]
+py-modules = ["cutie_os"]
