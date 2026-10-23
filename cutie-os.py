@@ -3930,10 +3930,14 @@ def tool_ed(app, args):
 
 
 LANG_GATES = {
+    "python": "untitled.py", "py": "untitled.py", "p": "untitled.py",
     "c": "untitled.c", "cpp": "untitled.cpp", "c++": "untitled.cpp",
     "html": "untitled.html", "css": "untitled.css",
+    "sh": "untitled.sh", "bash": "untitled.sh", "shell": "untitled.sh",
+    "js": "untitled.js", "node": "untitled.js", "j": "untitled.js",
     "json": "untitled.json", "md": "untitled.md",
-    "txt": "untitled.txt",
+    "rust": "untitled.rs", "r": "untitled.rs", "go": "untitled.go", "g": "untitled.go",
+    "java": "untitled.java", "txt": "untitled.txt", "t": "untitled.txt",
 }
 
 
@@ -7796,13 +7800,9 @@ class App:
         if self.tpage is not None:
             self.handle_tpage_event(ev)
             return
-            return
         if self.gmpage:
             self.handle_gm_event(ev)
             return
-        if self.gmpage and not L.too_small:
-            cv.clear()
-            return self.build_gm_frame(t)
         if self.pridepage:
             self.handle_pride_event(ev)
             return
@@ -8013,7 +8013,25 @@ class App:
         if not parts:
             return
         cmd, args = parts[0], parts[1:]
-        # 1. Registered built-in tools have first priority
+        # 1. Python with script or flags -> run via tool_python
+        if cmd.lower() in ("python", "py", "python3") and args:
+            tool = TOOL_MAP.get(cmd)
+            if tool:
+                self.tool_tick(tool)
+                try:
+                    tool.fn(self, args)
+                except Exception as e:
+                    T.push([("✗ %s failed: %s" % (cmd, e), C_RED)])
+                return
+        # 2. Designed in-HUD language gates (bare py, python, c, sh, shell, bash, node, js, rust, go...)
+        gate = LANG_GATES.get(cmd.lower())
+        if gate and not args:
+            fname = _gate_counter(gate)
+            self.open_epage(_untitled_path(fname))
+            return
+        if cmd.lower() == "c" and args:
+            return self.open_epage(" ".join(args))
+        # 3. Registered built-in tools
         tool = TOOL_MAP.get(cmd)
         if tool:
             self.tool_tick(tool)
@@ -8022,26 +8040,19 @@ class App:
             except Exception as e:
                 T.push([("✗ %s failed: %s" % (cmd, e), C_RED)])
             return
-        # 2. cd command
+        # 4. cd command
         if cmd == "cd":
             self.do_cd(args)
             return
-        # 3. User macros
+        # 5. User macros
         if cmd in T.macros and cmd not in TOOL_MAP and cmd not in ("cd", "sudo"):
             T.push([("◇ macro %s » %s" % (cmd, T.macros[cmd]), C_SLATE)])
             return self.route(T.macros[cmd], depth + 1)
-        # 4. Interactive TTY programs (shells, REPLs, editors)
+        # 6. Interactive TTY programs (shells, REPLs, editors)
         if cmd in TTY_PROGRAMS:
             self.run_pty([self.shell, "-c", line])
             return
-        # 5. Language file gates (only for non-executable file shortcuts)
-        gate = LANG_GATES.get(cmd.lower())
-        if gate and not shutil.which(cmd):
-            if cmd.lower() == "c" and args:
-                return self.route("ed " + " ".join(args))
-            fname = _gate_counter(gate)
-            return self.route("ed " + _untitled_path(fname))
-        # 6. Background capture execution
+        # 7. Background capture execution
         self.start_capture(line)
 
     def do_cd(self, args):
@@ -8069,7 +8080,62 @@ class App:
             return self.build_gshop_frame(t)
         cv = self.cv
         L = self.layout
-        # ── gshop full-screen takeover (HUD chhup jata hai) ──
+        if getattr(self, "gmpage", None):
+            cv.clear()
+            return self.build_gm_frame(t)
+        if getattr(self, "pridepage", None):
+            cv.clear()
+            return self.build_pride_frame(t)
+        if getattr(self, "fancy", None):
+            cv.clear()
+            return self.build_fancy_frame(t)
+        if getattr(self, "breathe", None):
+            cv.clear()
+            return self.build_breathe_frame(t)
+        if getattr(self, "care", None):
+            cv.clear()
+            return self.build_care_frame(t)
+        if getattr(self, "cpage_bloom", None):
+            if len(self._bloom_petals) < 14 and random.random() < 0.3:
+                self._bloom_petals.append({
+                    "x": random.uniform(1, max(2, self.cv.w - 2)),
+                    "y": random.uniform(-8, 0),
+                    "vy": random.uniform(2.5, 6.0),
+                    "sw": random.uniform(1.5, 3.5),
+                    "ph": random.uniform(0, 6.28),
+                    "ch": random.choice(["·", "*", "✿"]),
+                    "c": random.choice([(244, 114, 182), (251, 191, 36),
+                                        (236, 72, 153), (196, 181, 253)])})
+            dtf = min(0.1, t - getattr(self, "_bloom_lt", t))
+            self._bloom_lt = t
+            self._bloom_flower = (self._bloom_flower + dtf) % 6.0
+            for pt in self._bloom_petals:
+                pt["y"] += pt["vy"] * dtf
+            self._bloom_petals = [p2 for p2 in self._bloom_petals
+                                  if p2["y"] < self.cv.h - 1]
+            cv.clear()
+            return self.build_cycle_frame(t)
+        if getattr(self, "chat", None) is not None and not L.too_small:
+            cv.clear()
+            return self.build_chat_frame(t)
+        if getattr(self, "tpage", None) is not None and not L.too_small:
+            cv.clear()
+            return self.build_tpage_frame(t)
+        if getattr(self, "dash", None) and not L.too_small:
+            cv.clear()
+            return self.build_dash_frame(t)
+        if getattr(self, "epage", None) and not L.too_small:
+            cv.clear()
+            return self.build_epage_frame(t)
+        if getattr(self, "cpage", None) and not L.too_small:
+            cv.clear()
+            return self.build_cpage_frame(t)
+        if getattr(self, "mpage", None) and not L.too_small:
+            cv.clear()
+            return self.build_mpage_frame(t)
+        if getattr(self, "help", None) is not None and not L.too_small:
+            cv.clear()
+            return self.build_help_frame(t)
         cv.clear()
         if L.too_small:
             self._draw_too_small(cv, t)
@@ -10928,9 +10994,9 @@ class App:
                 y2 = int(cy2 + math.sin(a2) * R * 0.55)
                 cv.set(x2, y2, "·", scale(C_WHITE, 0.35 + 0.4 * f))
             cv.put(cx2 - 1, cy2, "⚘", scale(C_PINK, 0.8 + 0.2 * math.sin(t * 3.0)))
-            cv.put(cx2 - disp_width(lab) // 2, cy2 + R + 2, lab, col)
+            cv.put(cx2 - disp_width(lab) // 2, int(cy2 + R + 2), lab, col)
             prog = "●" * bn + "○" * (6 - bn)
-            cv.put(cx2 - 3, cy2 + R + 4, prog, C_SLATE)
+            cv.put(cx2 - 3, int(cy2 + R + 4), prog, C_SLATE)
             cv.put(3, H - 3, "( -.- )", C_PINK)
             cv.put(12, H - 3, "momo bhi saans le rahi hai… hum saath hai ♡", C_LABEL)
         else:
